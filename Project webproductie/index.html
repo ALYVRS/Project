@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Orlan Ghekiere</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Orlan Ghekiere</h1>
+        <nav>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="checkbtn"><i class="fa-solid fa-bars"></i></label>
+            <ul class="navmenu">
+                <li><a href="#Bio">Bio</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Concerts">Concerts</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="Bio" class="bio-section">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="src/video1.MP4" type="video/mp4">
+        </video>
+        <div class="bio-content">
+            <h2>Over Orlan Ghekiere</h2>
+            <p>Orlan Ghekiere (1999) has a strong love for sound and its endless possibilities. He experimented a lot with 
+                different types of sound and is interested in a broad variety of music making. As a recently graduated jazz 
+                drummer at the conservatory of Antwerp he has been constantly on the hunt for new experiences. Besides the 
+                usual jazz-influenced drumming and playing concerts in different musical settings, styles and setups, he 
+                developed a love for electronic music. The magical world of synthesizers, DAWs and music production engulfed 
+                him in their practice. 
+                Orlan tries to break the barrier between natural day to day sound and music. Field Recordings and electronic 
+                improvisations blend into one big entity, recognizable sounds get assigned a new unrecognizable context which 
+                creates a tactile yet abstract space. Live, these explorations are met with acoustic drums. That’s how, while 
+                improvising, an extra texture is woven into that sound bath. The search continues in a physical manner</p>
+           
+        </div>
+    
+
+    </section>
+
+    <section id="Concerts" class="concerts-section">
+        <h2>Concerts</h2>
+        <div class="timeline">
+            <div class="event"><span>07/02</span> Abel Ghekiere – WEAREOPEN, Trix</div>
+            <div class="event"><span>21/02</span> Abel Ghekiere – Botanique</div>
+            <div class="event"><span>14/03</span> Abel Ghekiere – STUK</div>
+            <div class="event"><span>16/03</span> Kruimels – CCKortrijk</div>
+            <div class="event"><span>28/03</span> Abel Ghekiere – Rataplan, Antwerpen</div>
+            <div class="event"><span>03/04</span> Abel Ghekiere – NONA, Mechelen</div>
+            <div class="event"><span>05/04</span> Abel Ghekiere – BROADCAST AB, Brussel</div>
+            <div class="event"><span>06/04</span> Kruimels – CCWilrijk</div>
+            <div class="event"><span>11/04</span> Abel Ghekiere – EMERGE, Charleroi</div>
+            <div class="event"><span>06/05</span> Kruimels – CCDiest</div>
+            <div class="event"><span>10/05</span> Abel Ghekiere – STOEMP, Brussel</div>
+            <div class="event"><span>15/05</span> Abel Ghekiere – Palladium, Gent</div>
+            <div class="event"><span>25/05</span> I’m the hug – Cactus Club, Brugge</div>
+            <div class="event"><span>26/05</span> Ha Concerts – Gent</div>
+            <div class="event"><span>28/05</span> DeStudio – Antwerpen</div>
+            <div class="event"><span>30/05</span> Orlan Ghekiere + Charel Maes – Klappei, Antwerpen</div>
+            <div class="event"><span>08/07</span> Abel Ghekiere – Gent Jazz</div>
+            <div class="event"><span>13/07</span> Abel Ghekiere – Valkhof Festival, Nijmegen</div>
+            <div class="event"><span>22/07–22/08</span> Alleen een wonder – Zomer van Antwerpen (20x)</div>
+            <div class="event"><span>18/10</span> Alleen een wonder – CCKoksijde</div>
+            <div class="event"><span>19/10</span> Kruimels – Menen</div>
+            <div class="event"><span>23/10</span> Alleen een wonder – Brugge</div>
+        </div>
+    </section>
+
+
+
+
+
+
+<footer id="Contact" class="contact-section">
+    <h2>Contact</h2>
+    <ul class="contact-links">
+        <li><a href="https://open.spotify.com/artist/5f9Jxft9RlnKYIe43SMtEa?si=FOm4_XvbRJ-x-VSsFcGRFw" target="_blank">Spotify</a></li>
+        <li><a href="orlan.ghekiere@hotmail.com">E-mail</a></li>
+        <li><a href="https://www.instagram.com/orlanghekiere/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/orlan.ghekiere.1/" target="_blank">Facebook</a></li>
+    </ul>
+</footer>
+
+<button id="topButton" title="Naar boven">Top</button>
+
+<script>
+   
+    const topButton = document.getElementById("topButton");
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            topButton.style.display = "block";
+        } else {
+            topButton.style.display = "none";
+        }
+    };
+
+   
+    topButton.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+</body>
+</html>
