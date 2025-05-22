@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I'm the huge</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .project-detail {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #f25353;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .image-gallery img {
+      width: calc(33% - 1rem);
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(242, 83, 83, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #ccc;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .back-arrow {
+      font-size: 1.2rem;
+      color: #f25353;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-arrow:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .image-gallery img {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-detail">
+    <h1>I'm the hug</h1>
+
+    <div class="image-gallery">
+      <img src="src/hug1.jpeg" alt="I'm the Hug - Foto 1" />
+      <img src="src/hug2.jpeg" alt="I'm the Hug - Foto 2" />
+      <img src="src/hug3.JPG" alt="I'm the Hug - Foto 3" />
+    </div>
+
+    <p>
+      I'm the hug is Mathilde Luijten, Abel Ghekiere, Simon Mitxelena and Orlan Ghekiere. Each with their own background, the musicians bring singer-songwriter, folk, indie pop and jazz together into an intimate sound. For fans of Hayley Heynderickx, Florist and Keaton Henson.
+    </p>
+
+    <a href="index.html#Projects" class="back-arrow">&#8592; Terug naar projecten</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abel Ghekiere</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      height: 100%;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      text-align: center;
+    }
+    .project-detail {
+      width: 100vw;
+      min-height: 100vh;
+      padding: 2rem;
+      box-sizing: border-box;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #f25353;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .project-text {
+      max-width: 800px;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+    .project-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      max-width: 1000px;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    .project-images img {
+      width: calc(20% - 1rem);
+      height: 150px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(242, 83, 83, 0.7);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+    .back-arrow {
+      font-size: 1.2rem;
+      color: #f25353;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .back-arrow:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      .project-images {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .project-images img {
+        width: 90vw;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-detail">
+    <h1>Abel Ghekiere</h1>
+    <div class="project-images">
+      <img src="src/11.jpeg" alt="Project 1 Foto 1" />
+      <img src="src/12.jpeg" alt="Project 1 Foto 2" />
+      <img src="src/13.jpeg" alt="Project 1 Foto 3" />
+      <img src="src/14.jpeg" alt="Project 1 Foto 4" />
+      <img src="src/15.jpeg" alt="Project 1 Foto 5" />
+    </div>
+    <div class="project-text">
+     Abel Ghekiere is een Belgische multi instrumentalist met een sound die voortkomt uit minimalistische jazz, traditionele folk en field recordings. Op zijn debuutalbum – Voor het verdwijnt, en daarna – klonken de sporen van verdriet en verlies, een album dat meewiegt en troost. In zijn nieuwe muziek speelt hij met meer openheid, zachtheid en euforie. De inspiratie voor de intuitieve, gestripte vorm van songwriting komt van o.a. Nils Økland, Sufjan Stevens en Caroline. Abel is gitarist van opleiding maar neemt klarinet en banjo mee in de studio en op het podium. Zijn nieuwe album, ‘In de verte, dit uitzicht’ verschijnt in februari 2025 op vinyl bij Rotkat records. Live speelt hij in quartet met Tobias Vockaert (sax), Orlan Ghekiere (drum) en Hendrike Scharmann (viool).
+    </div>
+    <a href="index.html#Projects" class="back-arrow">&#8592; Terug naar projecten</a>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+

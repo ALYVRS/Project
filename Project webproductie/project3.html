@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alleen een wonder</title>
+  <style>
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+   
+    .project-detail {
+      width: 100vw;
+      height: 100vh;
+      padding: 2rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+    }
+
+   
+    .project-detail h1 {
+      color: #f25353;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+   
+    .project-detail img {
+      max-width: 90vw;
+      max-height: 60vh;
+      object-fit: contain;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(242, 83, 83, 0.7);
+    }
+
+   
+    .project-detail p {
+      font-size: 1.25rem;
+      color: #ccc;
+      max-width: 800px;
+      line-height: 1.6;
+      margin: 0 auto;
+    }
+
+   
+    .back-arrow {
+      margin-top: 3rem;
+      font-size: 1.2rem;
+      color: #f25353;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-arrow:hover {
+      text-decoration: underline;
+    }
+
+    
+    @media (max-width: 600px) {
+      .project-detail h1 {
+        font-size: 2rem;
+      }
+      .project-detail p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-detail">
+    <h1>Alleen een wonder</h1>
+    <img src="src/project1.jpg" alt="Project 1" />
+    <p>
+       In Alleen een wonder vertelt Johannes Lievens over iemand die gered wordt door een kiwiplant, iemand die genekt wordt door vijf cijfers en iemand wiens leven veranderde door een ontmoeting aan de voet van de Himalaya. Samen met drummer Orlan Ghekiere is Johannes koortsachtig op reis, nachtenlang, op zoek naar houvast.
+    </p>
+    <a href="index.html#Projects" class="back-arrow">&#8592; Terug naar projecten</a>
+  </div>
+</body>
+</html>

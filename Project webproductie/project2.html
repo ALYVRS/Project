@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Age of Panic</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .project-detail {
+      width: 100vw;
+      padding: 2rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+    }
+
+    .project-detail h1 {
+      color: #f25353;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .image-row img {
+      max-width: 40vw;
+      max-height: 50vh;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(242, 83, 83, 0.7);
+    }
+
+    .description {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 800px;
+      line-height: 1.7;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .description hr {
+      border: none;
+      border-top: 1px solid #555;
+      width: 60%;
+      margin: 2rem auto;
+    }
+
+    .description p {
+      margin-bottom: 1.5rem;
+    }
+
+    .back-arrow {
+      margin-top: 3rem;
+      font-size: 1.2rem;
+      color: #f25353;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-arrow:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .image-row img {
+        max-width: 90vw;
+        max-height: 40vh;
+      }
+
+      .project-detail h1 {
+        font-size: 2rem;
+      }
+
+      .description {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-detail">
+    <h1>Age of Panic</h1>
+
+    <div class="image-row">
+      <img src="src/Age-of-panic-2.jpeg" alt="Age of Panic 1" />
+      <img src="src/Age-of-panic-3.jpeg" alt="Age of Panic 2" />
+    </div>
+
+    <div class="description">
+      <p><em>“Laetitiaaaa, Laetitiaaaa…!”</em></p>
+
+      <p><strong>Zondag.</strong><br>
+      Laetitia, reporter voor het journaal, doet verslag van de grootste politieke veldslag die het land de afgelopen jaren heeft gezien. Midden in deze chaos wil Vincent, haar ex-man, onaangekondigd hun twee jonge dochters zien.</p>
+
+      <p>Het is een manische dag: een moeder en een vader verwikkeld in een voogdijstrijd, twee onrustige dochters, een opgefokte babysitter, een behoeftig nieuw vriendje en een land in tweeën gedeeld.</p>
+
+      <p><strong>Age of Panic</strong>, naar de gelijknamige film (2013) van Justine Triet, is een verhaal over hoe wij als mens en maatschappij steeds verder van elkaar weggroeien.</p>
+
+      <p>Hoe polarisatie ervoor zorgt dat we enkel nog naast elkaar en niet met elkaar spreken. Een verhaal waarin schuld en onschuld, waarheid en leugen, goed en fout elkaar steeds uitdagen. Over het goed willen doen en dan toch falen.</p>
+
+      <p><em>Maken we een onderscheid tussen iemands intentie en het resultaat?</em></p>
+
+      <hr>
+
+      <p><strong>CREDITS</strong></p>
+      <p>
+        <strong>Concept & Spel:</strong> Kes Bakker, Timon Kouloumpis, Mona Lahousse, Jef Uyttenhove<br>
+        <strong>Coaching:</strong> Jesse Vandamme<br>
+        <strong>Gebaseerd op:</strong> <em>La Bataille de Solférino</em> (2013) – Justine Triet<br>
+        <strong>Muziek:</strong> Orlan Ghekiere<br>
+        <strong>Techniek:</strong> Ilja Van Vlierberghe
+      </p>
+
+      <p><strong>Met dank aan:</strong><br>
+      Zuidpool, TG Stan, Arca Theater, Matterhorn VZW, Koninklijk Conservatorium Antwerpen, KASK & Conservatorium Gent, Toneelacademie Maastricht, Louise Van den Eede, Simon De Winne, Carolina Maciel de França, Mieja Hollevoet, Bauke Lievens, Thomas Walgrave, Bart van den Eynde en Zaza Dupont
+      </p>
+    </div>
+
+    <a href="index.html#Projects" class="back-arrow">&#8592; Terug naar projecten</a>
+  </div>
+</body>
+</html>

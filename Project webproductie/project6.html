@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jorre</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .project-detail {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #f25353;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(242, 83, 83, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .back-arrow {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #f25353;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-arrow:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-detail">
+    <h1>Jorre</h1>
+
+    <div class="image-grid">
+      <img src="src/Jorre1.jpg" alt="Jorre beeld 1" />
+      <img src="src/jorre2.jpg" alt="Jorre beeld 2" />
+      <img src="src/jorre3.jpg" alt="Jorre beeld 3" />
+      <img src="src/jorre4.jpg" alt="Jorre beeld 4" />
+    </div>
+
+    <p>
+      Orlan Ghekiere onderzoekt met zijn muzikaal project de balans tussen stilte, samples, herinneringen, tastbaarheid en digitalisering. Een elektrische samenkomst is het dus zeker: de muziek staat nooit stil en trekt je elke kant op.
+    </p>
+
+    <a href="index.html#Projects" class="back-arrow">&#8592; Terug naar projecten</a>
+  </div>
+</body>
+</html>

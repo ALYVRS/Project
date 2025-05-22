@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kruimels</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .project-detail {
+      width: 100vw;
+      padding: 2rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+    }
+
+    .project-detail h1 {
+      color: #f25353;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .image-row img {
+      max-width: 40vw;
+      max-height: 50vh;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(242, 83, 83, 0.7);
+    }
+
+    .description {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 800px;
+      line-height: 1.7;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .back-arrow {
+      margin-top: 3rem;
+      font-size: 1.2rem;
+      color: #f25353;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-arrow:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .image-row img {
+        max-width: 90vw;
+        max-height: 40vh;
+      }
+
+      .project-detail h1 {
+        font-size: 2rem;
+      }
+
+      .description {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-detail">
+    <h1>Kruimels</h1>
+
+    <div class="image-row">
+      <img src="src/kruimels1.jpg" alt="Kruimels 1" />
+      <img src="src/kruimels2.jpg" alt="Kruimels 2" />
+    </div>
+
+    <div class="description">
+      <p>
+        In de voorstelling <strong>Kruimels</strong> gaan barokmuziek, woord en live electronics een spannend gesprek aan met elkaar over verdwalen. Mona Thijs voert in haar zelfgeschreven teksten iemand op die de weg probeert kwijt te raken in een landschap dat steeds magisch realistischer wordt.
+      </p>
+      <p>
+        Live electronics-muzikant <strong>Orlan Ghekiere</strong> creëert een elektronisch soundscape met field recordings die hij maakte op tochten zonder eindbestemming. Barokensemble <strong>Kapellmeister</strong> brengt werk van Buxtehude, Telemann, J. S. Bach en Schmelzer: muziek waarin de zoekende voetstappen van de jonge Bach echoën, die een staptocht van honderden kilometers ondernam, dwars door de Duitse bossen, op weg naar zijn grote voorbeeld Buxtehude.
+      </p>
+      <p>
+        <em>Kruimels</em> zoekt het punt op waarop je rond je kijkt, een vreemde vogel hoort en denkt: “ik ben verdwaald” – en hoe erg is dat eigenlijk?
+      </p>
+      <p>
+        <strong>Live electronics</strong>: Tijdens de voorstelling bestuurt Orlan live het muzieksoftwareprogramma Ableton. Hij gebruikt zelfgemaakte geluidsopnames als sferische klanklaag: opnames van lange natuurtochten, de roep van een stern, het gekraak van ijs, de stuwende bassen van een dorpsfeest. Daarnaast vervormt hij die opnames – een windhoos of een eenzame saxofoon – door ze uit elkaar te trekken tot muzieknoten en bespeelt hij die zoals een melodisch instrument.
+      </p>
+    </div>
+
+    <a href="index.html#Projects" class="back-arrow">&#8592; Terug naar projecten</a>
+  </div>
+</body>
+</html>
