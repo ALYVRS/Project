@@ -45,7 +45,7 @@ nav {
 }
 
 .navmenu li a:hover {
-    background-color: #c43333;
+     background-color: #d14545;
 }
 
 
@@ -103,7 +103,7 @@ nav {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
-    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    text-shadow: px 2px 4px rgb(0, 0, 0);
 }
 
 
@@ -179,12 +179,8 @@ nav {
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
 }
 
-.event:hover {
-    transform: scale(1.02);
-}
 
 .event-date {
     font-weight: bold;
@@ -199,22 +195,6 @@ nav {
     color: #ccc;
     font-size: 1rem;
 }
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-
-
-
-
 
 
 
@@ -254,7 +234,7 @@ nav {
 }
 
 .contact-links li a:hover {
-    background-color: #e93939;
+    background-color: #e85e5e;
 }
 
 
@@ -294,7 +274,7 @@ nav {
 }
 
 #topButton:hover {
-    background-color: #e62a2a;
+     background-color: #d14545;
 }
 
 
@@ -302,16 +282,19 @@ nav {
 
 
 .projects-section {
-    background-color: #111;
+    background: 
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png'), 
+       linear-gradient(135deg, #923c2b, #c45224);
+    background-size: auto, cover;
+    background-blend-mode: multiply;
     color: white;
     padding: 4rem 1rem;
     text-align: center;
 }
-
 .projects-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #c43333;
+    color: #a52f2f; 
 }
 
 .projects-grid {
@@ -323,14 +306,14 @@ nav {
 }
 
 .project-card {
-    background-color: #1e1e1e;
+    background-color: #a52f2f;
     border-radius: 15px;
     overflow: hidden;
     text-decoration: none;
     color: white;
     width: 250px;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
@@ -347,5 +330,5 @@ nav {
 .project-card h3 {
     margin: 1rem 0;
     font-size: 1.1rem;
-    color: #f25353;
+    color: #e59191;
 }
