@@ -4,140 +4,230 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Age of Panic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --light-bg: #f9f9f9;
+      --light-text: #222222;
+      --dark-bg: #222327;
+      --dark-text: #f2f2f2;
+      --accent-red: #c62828;
+      --accent-orange: #ff7043;
+      --border-light: #e0e0e0;
+      --border-dark: #3a3c40;
+      --shadow-red: rgba(198, 40, 40, 0.5);
+    }
+
     html, body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
+      font-family: 'Inter', sans-serif;
       height: 100%;
-      background-color: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      overflow-y: auto;
-      text-align: center;
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    body {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    body.fade-in {
+      opacity: 1;
+    }
+    body.fade-out {
+      opacity: 0;
     }
 
     .project-detail {
-      width: 100vw;
-      padding: 2rem;
-      box-sizing: border-box;
+      display: flex;
+      max-width: 1300px;
+      margin: 2rem auto;
+      min-height: 90vh;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      border: 1px solid var(--border-light);
+      background-color: var(--light-bg);
+      position: relative;
+    }
+
+    .text-panel {
+      flex: 1;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      padding: 3rem 2.5rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #111;
+      justify-content: space-between;
+      border-right: 4px solid var(--accent-red);
     }
 
-    .project-detail h1 {
-      color: #f25353;
+    .text-panel h1 {
+      font-family: 'Antonio', sans-serif;
       font-size: 3rem;
-      margin-bottom: 1rem;
+      text-transform: uppercase;
+      color: var(--accent-red);
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px rgba(198, 40, 40, 0.3);
     }
 
-    .image-row {
+    .text-panel p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: var(--light-text);
+    }
+
+    .project-images {
+      flex: 1;
+      background-color: var(--dark-bg);
+      padding: 2.5rem 2rem;
       display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 2rem;
+      flex-direction: column;  /* Afbeeldingen onder elkaar */
+      gap: 1.5rem;
+      justify-content: flex-start;
+      border-left: 4px solid var(--accent-red);
     }
 
-    .image-row img {
-      max-width: 40vw;
-      max-height: 50vh;
+    .project-images img {
+      width: 100%;      /* breedte volledig */
+      height: auto;     /* hoogte automatisch */
       object-fit: cover;
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(242, 83, 83, 0.7);
+      border: 3px solid var(--border-dark);
+      box-shadow: 0 0 15px var(--shadow-red);
+      filter: saturate(1.2) contrast(1.2);
+      transition: none;
     }
 
-    .description {
-      font-size: 1.2rem;
-      color: #ccc;
-      max-width: 800px;
-      line-height: 1.7;
-      text-align: center;
-      margin: 0 auto;
+    /* Navigatieknoppen */
+    .nav-buttons {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 200px;
+      pointer-events: auto;
+      padding: 0 2.5rem;
+      box-sizing: border-box;
     }
-
-    .description hr {
+    .nav-buttons button {
+      background: rgba(198, 40, 40, 0.5);
       border: none;
-      border-top: 1px solid #555;
-      width: 60%;
-      margin: 2rem auto;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.5rem;
+      box-shadow: 0 0 8px rgba(198, 40, 40, 0.7);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: all;
     }
 
-    .description p {
-      margin-bottom: 1.5rem;
+    .nav-buttons button:hover {
+      background: rgba(198, 40, 40, 0.9);
+      box-shadow: 0 0 15px rgba(198, 40, 40, 1);
     }
 
-    .back-arrow {
-      margin-top: 3rem;
-      font-size: 1.2rem;
-      color: #f25353;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+    /* Verwijderd terug-naar-projecten link (back-arrow) */
 
-    .back-arrow:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .image-row img {
-        max-width: 90vw;
-        max-height: 40vh;
+    @media (max-width: 900px) {
+      .project-detail {
+        flex-direction: column;
+        margin: 1rem;
+        min-height: auto;
       }
-
-      .project-detail h1 {
-        font-size: 2rem;
+      .text-panel, .project-images {
+        border: none;
+        padding: 2rem 1.5rem;
       }
-
-      .description {
-        font-size: 1rem;
-        padding: 0 1rem;
+      .project-images {
+        flex-direction: column; /* blijf kolom voor 2 foto's */
+        gap: 1rem;
+      }
+      .project-images img {
+        width: 100%;
+        height: auto;
+      }
+      .nav-buttons {
+        position: static;
+        padding: 1rem 0;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .nav-buttons button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="project-detail">
-    <h1>Age of Panic</h1>
+    <div class="text-panel">
+      <div>
+        <h1>Age of Panic</h1>
+        <p><em>“Laetitiaaaa, Laetitiaaaa…!”</em></p>
 
-    <div class="image-row">
+        <p><strong>Zondag.</strong><br>
+        Laetitia, reporter voor het journaal, doet verslag van de grootste politieke veldslag die het land de afgelopen jaren heeft gezien. Midden in deze chaos wil Vincent, haar ex-man, onaangekondigd hun twee jonge dochters zien.</p>
+
+        <p>Het is een manische dag: een moeder en een vader verwikkeld in een voogdijstrijd, twee onrustige dochters, een opgefokte babysitter, een behoeftig nieuw vriendje en een land in tweeën gedeeld.</p>
+
+        <p><strong>Age of Panic</strong>, naar de gelijknamige film (2013) van Justine Triet, is een verhaal over hoe wij als mens en maatschappij steeds verder van elkaar weggroeien.</p>
+
+        <p>Hoe polarisatie ervoor zorgt dat we enkel nog naast elkaar en niet met elkaar spreken. Een verhaal waarin schuld en onschuld, waarheid en leugen, goed en fout elkaar steeds uitdagen. Over het goed willen doen en dan toch falen.</p>
+
+        <p><em>Maken we een onderscheid tussen iemands intentie en het resultaat?</em></p>
+
+        <hr>
+
+        <p><strong>CREDITS</strong></p>
+        <p>
+          <strong>Concept & Spel:</strong> Kes Bakker, Timon Kouloumpis, Mona Lahousse, Jef Uyttenhove<br>
+          <strong>Coaching:</strong> Jesse Vandamme<br>
+          <strong>Gebaseerd op:</strong> <em>La Bataille de Solférino</em> (2013) – Justine Triet<br>
+          <strong>Muziek:</strong> Orlan Ghekiere<br>
+          <strong>Techniek:</strong> Ilja Van Vlierberghe
+        </p>
+
+        <p><strong>Met dank aan:</strong><br>
+        Zuidpool, TG Stan, Arca Theater en Rotkat.</p>
+      </div>
+      <!-- Terug naar projecten link verwijderd -->
+    </div>
+
+    <div class="project-images">
       <img src="src/Age-of-panic-2.jpeg" alt="Age of Panic 1" />
       <img src="src/Age-of-panic-3.jpeg" alt="Age of Panic 2" />
     </div>
 
-    <div class="description">
-      <p><em>“Laetitiaaaa, Laetitiaaaa…!”</em></p>
-
-      <p><strong>Zondag.</strong><br>
-      Laetitia, reporter voor het journaal, doet verslag van de grootste politieke veldslag die het land de afgelopen jaren heeft gezien. Midden in deze chaos wil Vincent, haar ex-man, onaangekondigd hun twee jonge dochters zien.</p>
-
-      <p>Het is een manische dag: een moeder en een vader verwikkeld in een voogdijstrijd, twee onrustige dochters, een opgefokte babysitter, een behoeftig nieuw vriendje en een land in tweeën gedeeld.</p>
-
-      <p><strong>Age of Panic</strong>, naar de gelijknamige film (2013) van Justine Triet, is een verhaal over hoe wij als mens en maatschappij steeds verder van elkaar weggroeien.</p>
-
-      <p>Hoe polarisatie ervoor zorgt dat we enkel nog naast elkaar en niet met elkaar spreken. Een verhaal waarin schuld en onschuld, waarheid en leugen, goed en fout elkaar steeds uitdagen. Over het goed willen doen en dan toch falen.</p>
-
-      <p><em>Maken we een onderscheid tussen iemands intentie en het resultaat?</em></p>
-
-      <hr>
-
-      <p><strong>CREDITS</strong></p>
-      <p>
-        <strong>Concept & Spel:</strong> Kes Bakker, Timon Kouloumpis, Mona Lahousse, Jef Uyttenhove<br>
-        <strong>Coaching:</strong> Jesse Vandamme<br>
-        <strong>Gebaseerd op:</strong> <em>La Bataille de Solférino</em> (2013) – Justine Triet<br>
-        <strong>Muziek:</strong> Orlan Ghekiere<br>
-        <strong>Techniek:</strong> Ilja Van Vlierberghe
-      </p>
-
-      <p><strong>Met dank aan:</strong><br>
-      Zuidpool, TG Stan, Arca Theater, Matterhorn VZW, Koninklijk Conservatorium Antwerpen, KASK & Conservatorium Gent, Toneelacademie Maastricht, Louise Van den Eede, Simon De Winne, Carolina Maciel de França, Mieja Hollevoet, Bauke Lievens, Thomas Walgrave, Bart van den Eynde en Zaza Dupont
-      </p>
+    <div class="nav-buttons">
+      <!-- Linker knop gaat naar vorige project -->
+      <button aria-label="Vorige project" onclick="goToPage('project1.html')">&#8592;</button>
+      <!-- Rechter knop gaat naar volgende project -->
+      <button aria-label="Volgende project" onclick="goToPage('project3.html')">&#8594;</button>
     </div>
-
-    <a href="index.html#Projects" class="back-arrow">&#8592; Terug naar projecten</a>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    function goToPage(url) {
+      document.body.classList.remove('fade-in');
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = url;
+      }, 600);
+    }
+  </script>
 </body>
 </html>
