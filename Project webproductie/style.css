@@ -1,51 +1,76 @@
-
-h1{
- font-family: 'Courier New', Courier, monospace;
- font-size: 50px;
- color: #c43333;
- margin: 0;
-}
-
-
-
-
-
-
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+    background-color: #1a0a0a;
     padding: 2rem;
-    background-color: #000;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(196, 51, 51, 0.6);
+    /* Verwijder position sticky of fixed zodat header met de pagina meescrolt */
+    position: static; /* of gewoon deze regel weghalen */
 }
 
+/* Titel in header */
+header h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    color: #c43333;
+    margin: 0 0 1rem 0;
+    text-shadow: 1px 1px 5px rgba(196, 51, 51, 0.8); /* lichte glow */
+    
+}
 
+header h1:hover {
+    color: #ff5c5c; /* iets fellere rode kleur bij hover */
+}
+
+/* Nav menu achtergrond */
 nav {
-    background-color: #000;
-    padding: 1rem 0;
+    background-color: #220f0f; /* donkerrood/bruin */
+    padding: 0.75rem 0;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(196, 51, 51, 0.7);
 }
 
+/* Ul container */
 .navmenu {
     list-style: none;
-    padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
 }
 
+/* Knoppen in nav */
 .navmenu li a {
     text-decoration: none;
     color: #fff;
-    background-color: #0a090a;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    background-color: #441919;
+    padding: 0.6rem 1.6rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-family: "Lucida Console", Courier, monospace;
+    box-shadow: 0 4px 10px rgba(196, 51, 51, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    user-select: none;
 }
 
-.navmenu li a:hover {
-     background-color: #d14545;
+/* Hover effect knoppen */
+.navmenu li a:hover,
+.navmenu li a:focus {
+    background-color: #c43333;
+    box-shadow: 0 6px 14px rgba(255, 92, 92, 0.8);
+    transform: translateY(-3px);
+    outline: none;
+}
+
+/* Actieve pagina knop (optioneel) */
+.navmenu li a.active {
+    background-color: #ff5c5c;
+    box-shadow: 0 6px 20px rgba(255, 92, 92, 0.9);
+    cursor: default;
+    pointer-events: none;
 }
 
 
@@ -79,6 +104,7 @@ nav {
     justify-content: center;
     color: rgb(255, 255, 255);
     text-align: center;
+    font-family: "Times New Roman", Times, serif;
     padding: 2rem;
 }
 
@@ -104,6 +130,7 @@ nav {
     margin: 0 auto;
     text-align: center;
     text-shadow: px 2px 4px rgb(0, 0, 0);
+    font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 
@@ -147,6 +174,7 @@ nav {
     animation: fadeIn 1s ease-in-out;
     z-index: 1;
     position: relative;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .next-concert-highlight {
@@ -210,6 +238,7 @@ nav {
     color: white;
     text-align: center;
     padding: 2rem 1rem;
+    
 }
 
 .contact-section h2 {
@@ -231,6 +260,8 @@ nav {
     background-color: #993633;
     padding: 0.5rem 1rem;
     border-radius: 20px;
+      font-family: "Times New Roman", Times, serif;
+
 }
 
 .contact-links li a:hover {
@@ -243,7 +274,7 @@ nav {
 
 
 
-
+!
 
 
 
@@ -281,62 +312,83 @@ nav {
 
 
 .projects-section {
-  background: 
-    url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
-    linear-gradient(135deg, #923c2b, #c45224);
-  background-size: auto, cover;
-  background-blend-mode: multiply;
-  color: white;
+  background: linear-gradient(135deg, #2b0f0f, #4c1919) !important;
+  color: #eee !important;
   padding: 4rem 1rem;
   text-align: center;
+  font-family: 'Courier New', Courier, monospace; /* kun je ook weghalen als je wilt */
 }
 
 .projects-section h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #a52f2f;
+  color: #c43333 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolommen met gelijke breedte */
   gap: 2rem;
   padding: 0 2rem;
+  
 }
 
 .project-card {
-  background-color: #a52f2f;
+  background-color: #3d1c1c !important;
   border-radius: 15px;
   overflow: hidden;
   text-decoration: none;
-  color: white;
-  width: 250px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #eee !important;
+  width: 100%; /* nu vult elke kaart 1 gridcel */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(196, 51, 51, 0.4);
+  border: 2px solid #7f2a2a !important;
+  text-align: center;
   display: flex;
   flex-direction: column;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
 }
 
 .project-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  border-bottom: 3px solid #c43333 !important;
+  flex-shrink: 0;
 }
 
-.project-title {
-  background-color: #f2d1d1; /* achtergrondkleur voor titel */
-  padding: 0.8rem;
-  text-align: center;
+.project-card h3 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: #c43333 !important;
+  font-weight: 600;
+  font-family: 'Lucida Bright', 'Palatino Linotype', serif;
+  flex-grow: 1;
+}
+/* Responsive styling */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* één kolom op smalle schermen */
+    padding: 0 1rem;
+  }
+
+
+  .navmenu li a {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
-.project-title h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #fff; /* wit zoals gevraagd */
-  font-weight: 500;
-}
