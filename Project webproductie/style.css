@@ -3,27 +3,26 @@ header {
     padding: 2rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(196, 51, 51, 0.6);
-    /* Verwijder position sticky of fixed zodat header met de pagina meescrolt */
-    position: static; /* of gewoon deze regel weghalen */
+    position: static; 
 }
 
-/* Titel in header */
+
 header h1 {
     font-family: "Times New Roman", Times, serif;
     font-size: 50px;
     color: #c43333;
     margin: 0 0 1rem 0;
-    text-shadow: 1px 1px 5px rgba(196, 51, 51, 0.8); /* lichte glow */
+    text-shadow: 1px 1px 5px rgba(196, 51, 51, 0.8); 
     
 }
 
 header h1:hover {
-    color: #ff5c5c; /* iets fellere rode kleur bij hover */
+    color: #ff5c5c; 
 }
 
-/* Nav menu achtergrond */
+
 nav {
-    background-color: #220f0f; /* donkerrood/bruin */
+    background-color: #220f0f; 
     padding: 0.75rem 0;
     border-radius: 15px;
     max-width: 600px;
@@ -31,7 +30,7 @@ nav {
     box-shadow: 0 0 10px rgba(196, 51, 51, 0.7);
 }
 
-/* Ul container */
+
 .navmenu {
     list-style: none;
     display: flex;
@@ -42,7 +41,7 @@ nav {
     flex-wrap: wrap;
 }
 
-/* Knoppen in nav */
+
 .navmenu li a {
     text-decoration: none;
     color: #fff;
@@ -56,7 +55,6 @@ nav {
     user-select: none;
 }
 
-/* Hover effect knoppen */
 .navmenu li a:hover,
 .navmenu li a:focus {
     background-color: #c43333;
@@ -65,7 +63,7 @@ nav {
     outline: none;
 }
 
-/* Actieve pagina knop (optioneel) */
+
 .navmenu li a.active {
     background-color: #ff5c5c;
     box-shadow: 0 6px 20px rgba(255, 92, 92, 0.9);
@@ -312,8 +310,8 @@ nav {
 
 
 .projects-section {
-  background: linear-gradient(135deg, #140707, #1f0a0a); /* donkerder en dieper rood-zwart */
-  color: #f0eaea; /* iets lichter dan #eee voor contrast */
+  background: linear-gradient(135deg, #140707, #1f0a0a); 
+  color: #f0eaea; 
   padding: 4rem 1rem;
   text-align: center;
 }
@@ -337,7 +335,7 @@ nav {
 }
 
 .project-card {
-  background-color: #241010; /* donker bordeaux-rood */
+  background-color: #241010; 
   border-radius: 15px;
   overflow: hidden;
   text-decoration: none;
@@ -373,10 +371,12 @@ nav {
   font-family: 'Lucida Bright', 'Palatino Linotype', serif;
   flex-grow: 1;
 }
-/* Responsive styling */
+
+
+
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr; /* één kolom op smalle schermen */
+    grid-template-columns: 1fr; 
     padding: 0 1rem;
   }
 
