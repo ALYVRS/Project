@@ -280,55 +280,63 @@ nav {
 
 
 
-
 .projects-section {
-    background: 
-        url('https://www.transparenttextures.com/patterns/asfalt-dark.png'), 
-       linear-gradient(135deg, #923c2b, #c45224);
-    background-size: auto, cover;
-    background-blend-mode: multiply;
-    color: white;
-    padding: 4rem 1rem;
-    text-align: center;
+  background: 
+    url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
+    linear-gradient(135deg, #923c2b, #c45224);
+  background-size: auto, cover;
+  background-blend-mode: multiply;
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
 }
+
 .projects-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #a52f2f; 
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #a52f2f;
 }
 
 .projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
 }
 
 .project-card {
-    background-color: #a52f2f;
-    border-radius: 15px;
-    overflow: hidden;
-    text-decoration: none;
-    color: white;
-    width: 250px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
+  background-color: #a52f2f;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  width: 250px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-.project-card h3 {
-    margin: 1rem 0;
-    font-size: 1.1rem;
-    color: #e59191;
+.project-title {
+  background-color: #f2d1d1; /* achtergrondkleur voor titel */
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.project-title h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff; /* wit zoals gevraagd */
+  font-weight: 500;
 }

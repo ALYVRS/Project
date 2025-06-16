@@ -4,112 +4,232 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blueberries leave bruises on the skin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600&family=Inter:wght@300;500&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --light-bg: #f9f9f9;
+      --light-text: #222222;
+      --dark-bg: #222327;
+      --dark-text: #f2f2f2;
+      --accent-red: #c62828;
+      --border-light: #e0e0e0;
+      --border-dark: #3a3c40;
+      --shadow-red: rgba(198, 40, 40, 0.5);
+    }
+
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
+      font-family: 'Inter', sans-serif;
+      height: 100%;
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    body {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    body.fade-out {
+      opacity: 0;
     }
 
     .project-detail {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
+      display: flex;
+      max-width: 1300px;
+      margin: 2rem auto;
+      min-height: 90vh;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+      border: 1px solid var(--border-light);
+      background-color: var(--light-bg);
+      position: relative;
+    }
+
+    .text-panel {
+      flex: 1;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 4px solid var(--accent-red);
+    }
+
+    .text-panel h1 {
+      font-family: 'Antonio', sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: var(--accent-red);
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 3px rgba(198, 40, 40, 0.3);
+    }
+
+    .text-panel p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--light-text);
+      white-space: pre-line;
+    }
+
+    .project-images {
+      flex: 1;
+      background-color: var(--dark-bg);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      border-left: 4px solid var(--accent-red);
+    }
+
+    .project-images img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 3px solid var(--border-dark);
+      box-shadow: 0 0 15px var(--shadow-red);
+    }
+
+    .nav-buttons {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 200px;
+      pointer-events: auto;
+      padding: 0 2.5rem;
       box-sizing: border-box;
     }
 
-    h1 {
-      color: #f25353;
-      font-size: 3rem;
-      margin-bottom: 2rem;
+    .nav-buttons button {
+      background: rgba(198, 40, 40, 0.5);
+      border: none;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.5rem;
+      box-shadow: 0 0 8px rgba(198, 40, 40, 0.7);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: all;
     }
 
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+    .nav-buttons button:hover {
+      background: rgba(198, 40, 40, 0.9);
+      box-shadow: 0 0 15px rgba(198, 40, 40, 1);
     }
 
-    .image-grid img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(242, 83, 83, 0.5);
-    }
-
-    .description {
-  font-size: 1.2rem;
-  color: #ccc;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;   
-  line-height: 1.7;
-  white-space: pre-line;
-}
-
-    .back-arrow {
-      display: inline-block;
-      margin-top: 3rem;
-      font-size: 1.2rem;
-      color: #f25353;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .back-arrow:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
+    @media (max-width: 900px) {
+      .project-detail {
+        flex-direction: column;
+        margin: 1rem;
+        min-height: auto;
       }
 
-      .description {
-        font-size: 1rem;
-        padding: 0 1rem;
+      .text-panel, .project-images {
+        border: none;
+        padding: 2rem 1.5rem;
+      }
+
+      .project-images {
+        gap: 1rem;
+      }
+
+      .project-images img {
+        width: 100%;
+        height: auto;
+      }
+
+      .nav-buttons {
+        position: static;
+        padding: 1rem 0;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .nav-buttons button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="project-detail">
-    <h1>Blueberries leave bruises on the skin</h1>
+    <div class="text-panel">
+      <div>
+        <h1>Blueberries leave bruises on the skin</h1>
+        <p>
+In de danstheatervoorstelling <strong>Blueberries leave bruises on the skin</strong> proberen drie spelers een antwoord te vinden op de vraag in welke rollen je jezelf kan vinden en verliezen. In een bonte verzameling aan pogingen proberen ze zichzelf en de ander bij elkaar te puzzelen.
 
-    <div class="image-grid">
+Hoeveel personen kan je tegelijk zijn? Wie bepaalt er wie je bent? En wat blijft er van je over als er niemand kijkt?
+
+<i>Blueberries leave bruises on the skin</i> is een stoet van mogelijke antwoorden op de vraag hoe maakbaar je bent, een viering van menselijke onzekerheid en overmoed, een feest waarop iedereen zichzelf heeft uitgenodigd, een ode aan het zoeken.
+
+<strong>CONCEPT & REGIE</strong> Mona Thijs & Astrid De Haes  
+<strong>SPEL</strong> Melody Van Gompel, Anna Tierney & Kaat De Bakker  
+<strong>GELUIDSONTWERP</strong> Orlan Ghekiere  
+<strong>KOSTUUMONTWERP</strong> Eli Verkeyn  
+<strong>LICHTONTWERP</strong> Dominique Pollet  
+<strong>DRAMATURGIE</strong> Jenne Van Daele  
+<strong>TEKSTCOACH</strong> Peggy De Landtsheer  
+<strong>PRODUCTIELEIDING</strong> Kato Wilms  
+
+<strong>SPECIALE DANK AAN</strong> Lennert Madou, Gideon Hakker, Sophie Tiersma & Emiel Van Wouwe  
+
+<strong>TEASER</strong>  
+DP Loic Meulenberg  
+
+<strong>PRODUCTIE</strong> Het Offensief  
+<strong>1ST</strong> Jeffrey Roekens  
+<strong>COPRODUCTIE</strong> de Vlaamse overheid, ECRU, DE SINGEL & Sabam for Culture  
+<strong>ONDERSTEUNING</strong> Kunstencentrum BUDA, Kultuurfaktorij Monty, Destelheide Hanenbos, C-TAKT, Zuidpool, Passerelle, PerPodium & Klein Verzet  
+<strong>MET DE STEUN VAN</strong> de Belgische Tax Shelter via Cronos Invest & Piros
+        </p>
+      </div>
+    </div>
+
+    <div class="project-images">
       <img src="src/blueberries_2.jpeg" alt="Voorstelling 1" />
       <img src="src/blueberries_3.jpeg" alt="Voorstelling 2" />
     </div>
 
-    <div class="description">
-     In de danstheatervoorstelling Blueberries leave bruises on the skin proberen drie spelers een antwoord te vinden op de vraag in welke rollen je jezelf kan vinden en verliezen. In een bonte verzameling aan pogingen proberen ze zichzelf en de ander bij elkaar te puzzelen. Hoeveel personen kan je tegelijk zijn? Wie bepaalt er wie je bent? En wat blijft er van je over als er niemand kijkt?
-Blueberries leave bruises on the skin is een stoet van mogelijke antwoorden op de vraag hoe maakbaar je bent, een viering van menselijke onzekerheid en overmoed, een feest waarop iedereen zichzelf heeft uitgenodigd, een ode aan het zoeken.
-
-CONCEPT & REGIE Mona Thijs & Astrid De Haes
-SPEL Melody Van Gompel, Anna Tierney & Kaat De Bakker
-GELUIDSONTWERP Orlan Ghekiere
-KOSTUUMONTWERP Eli Verkeyn
-LICHTONTWERP Dominique Pollet
-DRAMATURGIE Jenne Van Daele
-TEKSTCOACH Peggy De Landtsheer
-PRODUCTIELEIDING Kato Wilms
-SPECIALE DANK AAN Lennert Madou, Gideon Hakker, Sophie Tiersma & Emiel Van Wouwe
-TEASER
-DP Loic Meulenberg
-PRODUCTIE Het Offensief
-1ST Jeffrey Roekens
-COPRODUCTIE de Vlaamse overheid, ECRU, DE SINGEL & Sabam for Culture
-ONDERSTEUNING Kunstencentrum BUDA, Kultuurfaktorij Monty, Destelheide Hanenbos, C-TAKT, Zuidpool, Passerelle, PerPodium & Klein Verzet
-MET DE STEUN VAN de Belgische Tax Shelter via Cronos Invest & Piros
-
+    <div class="nav-buttons">
+      <button aria-label="Vorige project" onclick="goToPage('project3.html')">&#8592;</button>
+      <button aria-label="Volgende project" onclick="goToPage('project5.html')">&#8594;</button>
     </div>
-
-    <a href="index.html#Projects" class="back-arrow">&#8592; Terug naar projecten</a>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    function goToPage(url) {
+      document.body.classList.remove('fade-in');
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = url;
+      }, 600);
+    }
+  </script>
 </body>
 </html>
