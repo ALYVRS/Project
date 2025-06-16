@@ -170,7 +170,7 @@ nav {
 .concerts-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #c43333;
+    color: #f8f4f4;
     animation: fadeIn 1s ease-in-out;
     z-index: 1;
     position: relative;
@@ -274,7 +274,7 @@ nav {
 
 
 
-!
+
 
 
 
@@ -312,17 +312,16 @@ nav {
 
 
 .projects-section {
-  background: linear-gradient(135deg, #2b0f0f, #4c1919) !important;
-  color: #eee !important;
+  background: linear-gradient(135deg, #140707, #1f0a0a); /* donkerder en dieper rood-zwart */
+  color: #f0eaea; /* iets lichter dan #eee voor contrast */
   padding: 4rem 1rem;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace; /* kun je ook weghalen als je wilt */
 }
 
 .projects-section h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #c43333 !important;
+  color: #c43333;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: "Times New Roman", Times, serif;
@@ -330,39 +329,46 @@ nav {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 kolommen met gelijke breedte */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   padding: 0 2rem;
-  
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .project-card {
-  background-color: #3d1c1c !important;
+  background-color: #241010; /* donker bordeaux-rood */
   border-radius: 15px;
   overflow: hidden;
   text-decoration: none;
-  color: #eee !important;
-  width: 100%; /* nu vult elke kaart 1 gridcel */
+  color: #f2f2f2;
+  width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 12px rgba(196, 51, 51, 0.4);
-  border: 2px solid #7f2a2a !important;
+  border: 2px solid #5e1c1c;
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 92, 92, 0.6);
+  border-color: #c43333;
 }
 
 .project-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-bottom: 3px solid #c43333 !important;
+  border-bottom: 3px solid #c43333;
   flex-shrink: 0;
 }
 
 .project-card h3 {
   margin: 1rem 0;
   font-size: 1.2rem;
-  color: #c43333 !important;
+  color: #c43333;
   font-weight: 600;
   font-family: 'Lucida Bright', 'Palatino Linotype', serif;
   flex-grow: 1;
